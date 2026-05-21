@@ -8,26 +8,23 @@ const {
 module.exports = {
 
     data: new SlashCommandBuilder()
-    .setName('painel')
-    .setDescription('Painel premium da Vortex Diamonds'),
+        .setName('painel')
+        .setDescription('Painel premium da Vortex Diamonds'),
 
     async execute(interaction) {
 
         const embed = new EmbedBuilder()
 
-        // COR ROXA
-        .setColor('#a855f7')
+            .setColor('#a855f7')
 
-        // TITULO
-        .setTitle('💎 VORTEX DIAMONDS')
+            .setTitle('💎 VORTEX DIAMONDS')
 
-        // DESCRIÇÃO
-        .setDescription(`
+            .setDescription(`
 # 👑 CENTRAL DE ATENDIMENTO
 
-Bem-vindo ao sistema oficial da **Vortex Diamonds**.
+Bem-vindo ao suporte oficial da **Vortex Diamonds**.
 
-Selecione uma categoria abaixo para abrir um ticket com nossa equipe.
+Selecione uma categoria abaixo para abrir atendimento com nossa equipe.
 
 ## 📋 Categorias Disponíveis
 
@@ -37,81 +34,72 @@ Selecione uma categoria abaixo para abrir um ticket com nossa equipe.
 🤝 Revendedores  
 
 ⚡ Atendimento rápido, seguro e profissional.
-        `)
+            `)
 
-        // LOGO
-        .setThumbnail(
-'https://cdn-icons-png.flaticon.com/512/5968/5968756.png'
-        )
+            .setThumbnail(
+                'https://cdn-icons-png.flaticon.com/512/5968/5968756.png'
+            )
 
-        // SUA IMAGEM ROXA
-        .setImage(
-'https://cdn.discordapp.com/attachments/1506785864058015835/1507163196828684349/image_2026-05-21_152817584.png?ex=6a10e69b&is=6a0f951b&hm=de1bfe034a9b318cec42bc3459c0ecd89c81c997d0e2670ae4f4e4c67474fa4e'
-        )
+            .setImage(
+                'https://cdn.discordapp.com/attachments/1474613054703669453/1507169383653314570/7fabe658-acf0-4dda-baf4-7a3e3eb9c690.png?ex=6a10ec5e&is=6a0f9ade&hm=b91c214c2dc361901e05cd389e032639d5c0400bbd8c22ff9605c3a17bf3bd6c'
+            )
 
-        // FOOTER
-        .setFooter({
-            text: 'Vortex Diamonds • Sistema Premium'
-        });
+            .setFooter({
+                text: 'Vortex Diamonds • Sistema Premium'
+            });
 
-        // MENU
         const menu = new StringSelectMenuBuilder()
 
-        .setCustomId('ticket_menu')
+            .setCustomId('ticket_menu')
 
-        .setPlaceholder('📩 Selecione uma categoria')
+            .setPlaceholder('📩 Selecione uma categoria')
 
-        .addOptions([
+            .addOptions([
 
-            {
-                label: 'Comprar Diamantes',
-                description: 'Abrir ticket de compras',
-                emoji: '💎',
-                value: 'compras'
-            },
+                {
+                    label: 'Comprar Diamantes',
+                    description: 'Abrir ticket para compras',
+                    emoji: '💎',
+                    value: 'compras'
+                },
 
-            {
-                label: 'Suporte',
-                description: 'Abrir ticket de suporte',
-                emoji: '🛠',
-                value: 'suporte'
-            },
+                {
+                    label: 'Suporte',
+                    description: 'Abrir ticket de suporte',
+                    emoji: '🛠',
+                    value: 'suporte'
+                },
 
-            {
-                label: 'Pagamentos',
-                description: 'Ajuda com pagamentos',
-                emoji: '💰',
-                value: 'pagamentos'
-            },
+                {
+                    label: 'Pagamentos',
+                    description: 'Ajuda com pagamentos',
+                    emoji: '💰',
+                    value: 'pagamentos'
+                },
 
-            {
-                label: 'Revendedores',
-                description: 'Área de revendedores',
-                emoji: '🤝',
-                value: 'revendedores'
-            }
+                {
+                    label: 'Revendedores',
+                    description: 'Área de revendedores',
+                    emoji: '🤝',
+                    value: 'revendedores'
+                }
 
-        ]);
+            ]);
 
         const row = new ActionRowBuilder()
-        .addComponents(menu);
+            .addComponents(menu);
 
-        // ENVIAR PAINEL
         await interaction.channel.send({
 
             embeds: [embed],
 
-            components: [row],
-
-            files: [
-                './vortex-roxa.png'
-            ]
+            components: [row]
 
         });
 
         await interaction.reply({
 
-            content: '✅ Painel premium enviado.',
+            content: '✅ Painel enviado com sucesso.',
 
             ephemeral: true
 
