@@ -23,9 +23,9 @@ const client = new Client({
 
 const config = {
 
-    ticketCategory: 'COLOQUE_ID_CATEGORIA',
-    supportRole: 'COLOQUE_ID_CARGO_STAFF',
-    logChannel: 'COLOQUE_ID_CANAL_LOGS'
+    ticketCategory: '1506785864058015835',
+    supportRole: '1506801175348121672',
+    logChannel: '1506865070091669668'
 
 };
 
