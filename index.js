@@ -23,7 +23,7 @@ const client = new Client({
 
 const config = {
 
-    ticketCategory: '1506785864058015835',
+    ticketCategory: '1506785757866754241',
     supportRole: '1506801175348121672',
     logChannel: '1506865070091669668'
 
